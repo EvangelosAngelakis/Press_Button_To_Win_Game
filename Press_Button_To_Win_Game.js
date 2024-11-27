@@ -38,3 +38,8 @@ function cycleMessage() {
     currentIndex = (currentIndex + 1) % messages.length;
 };
 
+
+document.getElementById('dText').addEventListener('click', function(){
+document.getElementById('dText').textContent = "CONGRATULATIONS. YOU WON!!!"
+});
+
