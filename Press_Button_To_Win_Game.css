@@ -1,4 +1,32 @@
 body {
     text-align: center;
     background-color: bisque;
+    font-size: xx-large;
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 50%;
+    margin: 40px auto;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.page1, .page2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+#changeMessage {
+    font-size: xx-large;
+    border: solid black;
+    border-radius: 10px;
+}
+#message {
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 65%;
+    padding: 8px;
+    margin: 40px auto;
 }
