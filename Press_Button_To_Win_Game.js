@@ -29,21 +29,23 @@ const messages = [
 ];
 
 let currentIndex = 0;
+let stopExecution = false;
 
 function cycleMessage() {
-    const dText = document.getElementById('dText');
-    dText.innerText = messages[currentIndex];
-    currentIndex = (currentIndex + 1) % messages.length;
-    document.getElementById('dButton').style.backgroundColor = "bisque";
-    document.getElementById('dText').style.color = "black";
-};
+    if (stopExecution) return;
+         const dText = document.getElementById('dText');
+         dText.innerText = messages[currentIndex];
+         currentIndex = (currentIndex + 1) % messages.length;
+         document.getElementById('dButton').style.backgroundColor = "bisque";
+         document.getElementById('dText').style.color = "black";
+}
 
-
-document.getElementById('dText').addEventListener('click', function(){
-document.getElementById('dText').textContent = "CONGRATULATIONS. YOU WON!!! You are a Super Inteligent being from outer Space!"
-document.getElementById('dText').style.color = "white";
-document.getElementById('dButton').style.backgroundColor = "red";
-clearTimeout(timeoutId);
+document.getElementById('dText').addEventListener('click', function(event){
+    if (event.detail === 1) {
+         stopExecution = true; 
+         document.getElementById('dText').textContent = "CONGRATULATIONS. YOU WON!!!"
+         document.getElementById('dButton').style.backgroundColor = "cyan";
+    }
 });
 
 function resetPage(){
